@@ -3,9 +3,8 @@ export default function Home() {
    return(
    
    <div>
-     This is the HOME page
+     Learn Page
    </div>
-   
    
    )
    
