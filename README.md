@@ -1,2 +1,0 @@
-# yaqui-language-app
- 
