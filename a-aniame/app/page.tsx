@@ -1,14 +1,13 @@
-import {Button} from "@/components/ui/button";
-
 export default function Home() {
 
-return(
-
-<div>
-  <Button size="lg">Click Me</Button>
-</div>
-
-
-)
-
-}
+   return(
+   
+   <div>
+     This is the MAIN page
+   </div>
+   
+   
+   )
+   
+   }
+   
