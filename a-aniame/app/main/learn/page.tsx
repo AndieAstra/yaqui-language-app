@@ -22,8 +22,6 @@ export default function Home() {
       <FeedWrapper>
       <Header title="Spanish"/>
          <div className="space-y-4">
-
-
          </div>
       </FeedWrapper>
 
