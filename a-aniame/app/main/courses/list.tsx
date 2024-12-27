@@ -7,11 +7,10 @@ import { Course } from "./types"; // Assuming you have a Course type defined
 type Props = {
   courses: Course[];
   activeCourseId: number;
-  onCardClick: (id: number) => void; // Handle card click
 };
 
 // components/list.tsx
-export const List = ({ courses, activeCourseId, onCardClick }: Props) => {
+export const List = ({ courses, activeCourseId }: Props) => {
   if (!Array.isArray(courses)) {
     console.error("Invalid courses data:", courses);
     return <div>Error: Invalid courses data</div>;
@@ -25,7 +24,7 @@ export const List = ({ courses, activeCourseId, onCardClick }: Props) => {
           id={course.id}
           title={course.title}
           imageSrc={course.image_src}
-          onClick={onCardClick}
+          onClick={() => {}}
           active={course.id === activeCourseId}
           disabled={false}
         />
