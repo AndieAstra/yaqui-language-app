@@ -1,27 +1,35 @@
-// I AM NOT SURE IF I NEED TO KEEP THIS BUT USING FOR TEMP ANYWAY!!
+// components/list.tsx
 "use client";
-import { courses } from "@/db/schema";
-import { Card } from "./card"
+
+import { Card } from "./card";
+import { Course } from "./types"; // Assuming you have a Course type defined
 
 type Props = {
-courses: typeof courses.$inferSelect[];
-activeCourseId: number;
+  courses: Course[];
+  activeCourseId: number;
+  onCardClick: (id: number) => void; // Handle card click
 };
 
-export const List = ({}: Props) => {
-return (
-<div className="pt-6 grid grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(210,1fr))]">
-{courses.map((course) => (
-   <Card
-   key={course.id}
-   id={course.id}
-   title={course.title}
-   imageSrc={course.imageSrc}
-   // onClick{() => {}}
-   disabled={false}
-   // active={course.id === activeCourseId}
-   />
-   ))}
-</div>
-	)
-}
+// components/list.tsx
+export const List = ({ courses, activeCourseId, onCardClick }: Props) => {
+  if (!Array.isArray(courses)) {
+    console.error("Invalid courses data:", courses);
+    return <div>Error: Invalid courses data</div>;
+  }
+
+  return (
+    <div className="pt-6 grid grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(210,1fr))]">
+      {courses.map((course) => (
+        <Card
+          key={course.id}
+          id={course.id}
+          title={course.title}
+          imageSrc={course.image_src}
+          onClick={onCardClick}
+          active={course.id === activeCourseId}
+          disabled={false}
+        />
+      ))}
+    </div>
+  );
+};
