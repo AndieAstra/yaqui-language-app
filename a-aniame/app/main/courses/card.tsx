@@ -1,5 +1,8 @@
-import { cn } from "@/lib/utils";
 import Image from "next/image";
+import {Check} from "lucide-react"
+
+import { cn } from "@/lib/utils";
+
 
 type Props = {
   title: string;
@@ -16,6 +19,7 @@ export const Card = ({
   imageSrc,
   disabled,
   onClick,
+  active,
 }: Props) => {
   const fallbackImage = "/hero.svg"; // Set a fallback image URL here
 
@@ -29,14 +33,30 @@ export const Card = ({
         disabled && "pointer-events-none opacity-50"
       )}
     >
+
+      <div className="min-[24px] w-full flex items-center justify-end">
+      { active && (
+        <div className="rounded-md bg-green-600 flex items-center justify-center p-1.5">
+          <Check className="text-white stroke-[4] h-4 w-4"/>
+        </div>
+      )}
+      </div>
       <Image
         src={imageSrc || fallbackImage}
         alt={title}
-        className="object-cover w-full h-32 rounded-md"
-        width={200}
-        height={128}
+        className= "w-full h-32 rounded-md"
+        width={70}
+        height={93.33}
       />
-      <h2 className="mt-2 text-xl font-semibold">{title}</h2>
+      <p className="text-neutral-700 text-center font-bold mt-3">{title}</p>
     </div>
   );
 };
+
+/* <Image
+        src={imageSrc || fallbackImage}
+        alt={title}
+        className="object-cover w-full h-32 rounded-md"
+        width={10}
+        height={12}
+      /> */
