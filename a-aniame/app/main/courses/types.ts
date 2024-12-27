@@ -5,4 +5,3 @@ export interface Course {
    title: string;
    image_src: string;
  }
- 
