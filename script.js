@@ -1,8 +1,13 @@
 const canvas = document.querySelector("canvas"),
 toolBtns = document.querySelectorAll(".tool"),
-ctx = canvas.getContext("2d");
+fillColor = document.querySelector("#fill-color"),
+ctx = canvas.getContext("2d", {
+      willReadFrequently: true,
+ });
 
-let isDrawing = false,
+// global variables with default value
+let prevMouseX, prevMouseY, snapshot,
+isDrawing = false,
 selectedTool = "brush",
 brushWidth = 5;
 
@@ -13,17 +18,27 @@ window.addEventListener("load", () => {
 });
 
 const drawRect = (e) => {
-    //ctx.strokeRect(e.offsetX, eoffSetY);
+    // if fillColor isn't checked draw a rect with border else draw rect w/ background
+    if(!fillColor.checked) {
+        // creating circle according to the mouse pointer
+        return ctx.strokeRect(e.offsetX, e.offSetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+    }
+        ctx.fillRect(e.offsetX, e.offSetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
 }
 
-const startDraw = () => {
+const startDraw = (e) => {
     isDrawing = true;
+    prevMouseX = e.offsetX; // passing current mouseX position as prevMouseX value
+    prevMouseY = e.offsetY; // passing current mouseY position as prevMouseY value
     ctx.beginPath(); // creating new path to draw
     ctx.lineWidth = brushWidth; // passing brushSize as line width
+    // copying canvas data & passing as snapshot value... this avoids dragging the image
+    snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
 const drawing = (e) => {
     if(!isDrawing) return; // if isDrawing is false return from here
+    ctx.putImageData(snapshot, 0, 0); // adding copied canvas data on to this canvas
 
     if(selectedTool === "brush") {
         ctx.lineTo(e.offsetX, e.offsetY); //creating line according to mouse pointer
@@ -31,7 +46,6 @@ const drawing = (e) => {
     } else if(selectedTool === "rectangle"){
         drawRect(e);
     }
-
 }
 
 toolBtns.forEach(btn => {
@@ -46,4 +60,4 @@ toolBtns.forEach(btn => {
 
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
-canvas.addEventListener("mousemup", () => isDrawing = false);
+canvas.addEventListener("mouseup", () => isDrawing = false);

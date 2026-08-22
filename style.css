@@ -200,6 +200,8 @@ border-color: #ccc;
 
 .drawing-board{
     flex: 1;
+    border: rgb(71, 145, 255) 10px;
+    border-style:groove;
 }
 
 .drawing-board canvas{
