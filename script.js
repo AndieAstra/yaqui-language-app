@@ -21,9 +21,9 @@ const drawRect = (e) => {
     // if fillColor isn't checked draw a rect with border else draw rect w/ background
     if(!fillColor.checked) {
         // creating circle according to the mouse pointer
-        return ctx.strokeRect(e.offsetX, e.offSetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+        return ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
     }
-        ctx.fillRect(e.offsetX, e.offSetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+        ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
 }
 
 const startDraw = (e) => {
