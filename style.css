@@ -79,7 +79,7 @@ color:chartreuse;
 }
 
 .colors .options{
-    display: flex;
+    /* display: flex; */
     border-radius: 50%;
     margin-top: 3px;
     justify-content: space-between;
@@ -92,6 +92,10 @@ color:chartreuse;
     border-radius: 50%;
     margin-top: 3px;
     position: relative;
+}
+
+.text{
+padding-left: 30px;
 }
 
 .colors .option:nth-child(1){
@@ -149,6 +153,15 @@ border-color: #ccc;
     cursor: pointer;
 }
 
+.plus {
+  position:relative;
+  border: 1px dotted white;
+  width: 1px;
+  height: 1px;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
 .buttons button{
     width: 100%;
     color: white;
@@ -174,8 +187,15 @@ border-color: #ccc;
 }
 
 .buttons .save-img{
-    color: blueviolet;
-    border: 1px solid rgb(255, 196, 0);
+    color: #6cbaff;
+    background: blueviolet;
+    border: 1px solid #6C757D;
+    transition: all 0.3s ease;
+}
+
+.buttons .save-img:hover{
+    color: rgb(43, 137, 226);
+    background: blue;
 }
 
 .drawing-board{
