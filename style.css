@@ -15,6 +15,17 @@ body {
     background: rgb(182, 182, 255);
 }
 
+button {
+    background-color: transparent;
+    border-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 0; 
+}
+
 .container{
     display: flex;
     width: 100%;
@@ -29,7 +40,7 @@ section{
 }
 
 .tools-board{
-    width: 210px;
+    width: 250px;
     padding: 15px 22px 0;
 }
 
@@ -40,6 +51,7 @@ section{
 .row .options {
 list-style: none;
 margin: 10px 0 0 5px;
+padding-top: 10px;
 }
 
 .row .options .option{
@@ -82,20 +94,20 @@ color:chartreuse;
     /* display: flex; */
     border-radius: 50%;
     margin-top: 3px;
-    justify-content: space-between;
 }
 
 .colors .option{
     height: 20px;
-    width: 20px;
-    background: red;
+    width: 30px;
     border-radius: 50%;
     margin-top: 3px;
     position: relative;
 }
 
 .text{
-padding-left: 30px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .colors .option:nth-child(1){
@@ -137,7 +149,7 @@ border: 1px solid #bfbfbf;
     top: 50%;
     left: 50%;
     height: 12px;
-    width: 12px;
+    width: 20px;
     background: inherit;
     border-radius: inherit;
     border: 2px solid #fff;
@@ -155,7 +167,6 @@ border-color: #ccc;
 
 .plus {
   position:relative;
-  border: 1px dotted white;
   width: 1px;
   height: 1px;
   box-sizing: border-box;
