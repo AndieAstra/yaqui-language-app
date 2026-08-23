@@ -16,7 +16,7 @@
         <section class="tools-board">
             
             <div class="row">
-                <div class="title">
+                <div class="title" style="padding-left: 90px;">
                     <audio id="shapes" audiostart="false" src="media/shapes.m4a"></audio>
                     <button onclick="clickShapes();"><span>Ka nananam</span></button>
                 </div>
@@ -65,7 +65,7 @@
                     </li>
                 </ul>
             </div>
-
+<br>
             <div class="row colors">
                 <div class="title">
                     <audio id="colors" audiostart="false" src="media/colors.m4a"></audio>
@@ -108,9 +108,11 @@
                         <audio id="pink" audiostart="false" src="media/pink.m4a"></audio>
                         <button onclick="clickPink();"><span class="text">Sikheewi</span></button>
                     </li>
-                    <li class="plus">
+
+        <!-- This does work. Omitting for language purposes -->
+                    <!-- <li class="option">
                         <input type="color" id="color-picker" value="#4A98F7">
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
@@ -126,10 +128,7 @@
             <canvas></canvas>
         </section>
  </div>
-</div>
-
-<div class="">
-                <div class="row buttons">
+    <div class="row buttons">
                 <button class="clear-canvas">Clear Canvas</button>
                 <button class="save-img">Save As Image</button>
             </div>

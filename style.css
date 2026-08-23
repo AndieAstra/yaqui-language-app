@@ -99,19 +99,13 @@ color:rgb(255, 0, 149);
     padding-left: 10px;
 }
 
-.title #fill-color{
-    height: 14px;
-    width: 14px;
+.title {
+    padding-left: 100px;
     cursor: pointer;
+    font-weight: bolder;
 }
 
-
-
-
-
-
-
-
+/* ----------------------------------------- */
 
 #fill-color:checked ~ label{
     color: rgb(244, 247, 247);
@@ -220,15 +214,19 @@ border-color: #ccc;
     cursor: pointer;
 }
 
+.buttons{
+    padding-top: 20px;
+}
+
 .buttons .clear-canvas{
-    color: #6C757D;
-    border: 1px solid #6C757D;
+    color: #f1f3f4;
+    border: 1px solid #eff1f3;
     transition: all 0.3s ease;
 }
 
 .clear-canvas:hover{
     color: white;
-    background: grey;
+    background: rgb(0, 0, 0);
 }
 
 .buttons .save-img{
@@ -285,7 +283,7 @@ border-color: #ccc;
 
 .drawing-board canvas{
     width: 720px;
-    height: 720px;
+    height: 615px;
     background: transparent;
     border:rgb(155, 155, 0) 15px;
     border-style:solid;
@@ -293,7 +291,7 @@ border-color: #ccc;
 
 .lower-outer-box{
     width: 750px;
-    height: 740px;
+    height: 635px;
     border:rgb(228, 189, 13) 10px;
     border-style:solid;
 }
@@ -304,7 +302,7 @@ border-color: #ccc;
     --w: 350px; /* preferred image width */
 
     width: round(var(--w),var(--s)) 700px;
-    height: 720px;
+    height: 615px;
     aspect-ratio: 1;
     object-fit: cover;
     /* padding: calc(.75*var(--s)); */
