@@ -43,17 +43,30 @@ window.addEventListener("load", () => {
 
 // play.addEventListener("click", playMusic);
 
+function clickShapes() {
+    var sound = document.getElementById('shapes');
+    sound.play();
+}
+
 function clickRectangle() {
-    var sound = document.getElementById('audio');
+    var sound = document.getElementById('rectangle');
+    sound.play();
+}
+
+function clickCircle() {
+    var sound = document.getElementById('circle');
+    sound.play();
+}
+
+function clickTriangle() {
+    var sound = document.getElementById('triangle');
     sound.play();
 }
 
 function clickBlack() {
-    var sound = document.getElementById('audio2');
+    var sound = document.getElementById('black');
     sound.play();
 }
-
-
 // -------------------------------------------------
 
 const drawRect = (e) => {

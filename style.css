@@ -81,6 +81,38 @@ color:rgb(255, 0, 149);
     cursor: pointer;
 }
 
+
+/* ------------------------------------------- */
+
+.title:is(:hover, .active) img{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.title:is(:hover, .active) :where(span, label){
+    color:rgb(39, 39, 39);
+    font-size:larger;
+}
+
+.title :where(span, label){
+    color: black;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.title #fill-color{
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
 #fill-color:checked ~ label{
     color: rgb(244, 247, 247);
 }
