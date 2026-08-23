@@ -49,7 +49,7 @@ function clickShapes() {
 }
 
 function clickRectangle() {
-    var sound = document.getElementById('rectangle');
+    var sound = document.getElementById('rect');
     sound.play();
 }
 
@@ -63,8 +63,40 @@ function clickTriangle() {
     sound.play();
 }
 
+function clickWhite() {
+    var sound = document.getElementById('white');
+    sound.play();
+}
 function clickBlack() {
     var sound = document.getElementById('black');
+    sound.play();
+}
+function clickRed() {
+    var sound = document.getElementById('red');
+    sound.play();
+}
+function clickOrange() {
+    var sound = document.getElementById('orange');
+    sound.play();
+}
+function clickYellow() {
+    var sound = document.getElementById('yellow');
+    sound.play();
+}
+function clickGreen() {
+    var sound = document.getElementById('green');
+    sound.play();
+}
+function clickBlue() {
+    var sound = document.getElementById('blue');
+    sound.play();
+}
+function clickPurple() {
+    var sound = document.getElementById('purple');
+    sound.play();
+}
+function clickPink() {
+    var sound = document.getElementById('pink');
     sound.play();
 }
 // -------------------------------------------------

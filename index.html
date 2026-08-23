@@ -21,11 +21,14 @@
                     <button onclick="clickShapes();"><span>Ka nananam</span></button>
                 </div>
                 <ul class="options">
+
                     <li class="option tool" id="rectangle">
+    <!-- I renamed "rect" b/c it didn't like the full word :( -->
                         <img src="icons/rectangle.svg" alt="Rectangle">
-                        <audio id="rectangle" audiostart="false" src="media/rectangle.m4a"></audio>
+                        <audio id="rect" audiostart="false" src="media/rectangle.m4a"></audio>
                         <button onclick="clickRectangle();"><span>Woi katana teeve</span></button>
                     </li>
+
                     <li class="option tool" id="circle">
                         <img src="icons/circle.svg" alt="circle">
                         <audio id="circle" audiostart="false" src="media/circle.m4a"></audio>
@@ -70,32 +73,40 @@
                 </div>
                 <ul class="options">
                     <li class="option">
-                        <p class="text">Tosai</p>
+                        <audio id="white" audiostart="false" src="media/white.m4a"></audio>
+                        <button onclick="clickWhite();"><span class="text">Tosai</span></button>
                     </li>
                     <li class="option selected">
                         <audio id="black" audiostart="false" src="media/black.m4a"></audio>
                         <button onclick="clickBlack();"><span class="text">Chukui</span></button>
                     </li>
                     <li class="option">
-                        <p class="text">Siki</p>
+                        <audio id="red" audiostart="false" src="media/red.m4a"></audio>
+                        <button onclick="clickRed();"><span class="text">Siki</span></button>
                     </li>
                     <li class="option">
-                        <p class="text">Sawa_hewei</p>
+                        <audio id="orange" audiostart="false" src="media/orange.m4a"></audio>
+                        <button onclick="clickOrange();"><span class="text">Sawa_Hewei</span></button>
                     </li>
                     <li class="option">
-                        <p class="text">Sawai</p>
+                        <audio id="yellow" audiostart="false" src="media/yellow.m4a"></audio>
+                        <button onclick="clickYellow();"><span class="text">Sawai</span></button>
                     </li>
                     <li class="option">
-                        <p class="text">Siari</p>
+                        <audio id="green" audiostart="false" src="media/green.m4a"></audio>
+                        <button onclick="clickGreen();"><span class="text">Siari</span></button>
                     </li>
                     <li class="option">
-                        <p class="text">Tewei</p>
+                        <audio id="blue" audiostart="false" src="media/blue.m4a"></audio>
+                        <button onclick="clickBlue();"><span class="text">Tewei</span></button>
                     </li>
                     <li class="option">
-                        <p class="text">Kut_tewei</p>
+                        <audio id="purple" audiostart="false" src="media/purple.m4a"></audio>
+                        <button onclick="clickPurple();"><span class="text">Kut_tewei</span></button>
                     </li>
                     <li class="option">
-                        <p class="text">Sikheewi</p>
+                        <audio id="pink" audiostart="false" src="media/pink.m4a"></audio>
+                        <button onclick="clickPink();"><span class="text">Sikheewi</span></button>
                     </li>
                     <li class="plus">
                         <input type="color" id="color-picker" value="#4A98F7">
