@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(111, 53, 185);
+    overflow: hidden;
+}
+
+button {
+    background-color: transparent;
+    border-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 0; 
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1050px;
+}
+
+section{
+    background: white;
+    border-radius: 7px;
+}
+
+/* .tools-board{
+    width: 250px;
+    padding: 15px 22px 0;
+} */
+
+.tools-board .row{
+    margin-bottom: 20px;
+}
+
+.row .options {
+list-style: none;
+margin: 10px 0 0 5px;
+padding-top: 10px;
+}
+
+.row .options .option{
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.option:is(:hover, .active) img{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.option:is(:hover, .active) :where(span, label){
+color:rgb(255, 0, 149);
+}
+
+.option :where(span, label){
+    color: black;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.option #fill-color{
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+}
+
+
+/* ------------------------------------------- */
+
+.title:is(:hover, .active) img{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.title:is(:hover, .active) :where(span, label){
+    color:rgb(39, 39, 39);
+    font-size:larger;
+}
+
+.title :where(span, label){
+    color: black;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.title {
+    padding-left: 100px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+/* ----------------------------------------- */
+
+#fill-color:checked ~ label{
+    color: rgb(244, 247, 247);
+}
+
+.option #size-slider{
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.colors .options{
+    /* display: flex; */
+    border-radius: 50%;
+    margin-top: 3px;
+}
+
+.colors .option{
+    height: 20px;
+    width: 30px;
+    border-radius: 50%;
+    margin-top: 3px;
+    position: relative;
+}
+
+.text{
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: black;
+}
+
+.colors .option:nth-child(1){
+background-color: #fff;
+border: 1px solid #bfbfbf;
+}
+.colors .option:nth-child(2){
+background-color: #000;
+}
+.colors .option:nth-child(3){
+background-color: red;
+}
+.colors .option:nth-child(4){
+background-color: orange;
+}
+.colors .option:nth-child(5){
+background-color: yellow;
+}
+.colors .option:nth-child(6){
+background-color: green;
+}
+.colors .option:nth-child(7){
+background-color: blue;
+}
+.colors .option:nth-child(8){
+background-color: purple;
+}
+.colors .option:nth-child(9){
+background-color: pink;
+}
+.colors .option:nth-child(10){
+background-color: none;
+border: 1px solid #bfbfbf;
+}
+
+.colors .option.selected::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 20px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+}
+
+.colors .option:first-child:hover::before{
+border-color: #ccc;
+}
+
+.option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.plus {
+  position:relative;
+  width: 1px;
+  height: 1px;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+.buttons button{
+    width: 100%;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 11px 0;
+    font-size: 0.9rem;
+    margin-bottom: 13px;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons{
+    padding-top: 20px;
+}
+
+.buttons .clear-canvas{
+    color: #f1f3f4;
+    border: 1px solid #eff1f3;
+    transition: all 0.3s ease;
+}
+
+.clear-canvas:hover{
+    color: white;
+    background: rgb(0, 0, 0);
+}
+
+.buttons .save-img{
+    color: #000000;
+    background: rgb(208, 158, 255);
+    border: 1px solid #6C757D;
+    transition: all 0.3s ease;
+}
+
+.buttons .save-img:hover{
+    color: rgb(43, 137, 226);
+    background: rgb(196, 255, 196);
+}
+
+.drawing-board{
+    flex: 1;
+    background: transparent;
+}
+
+.tools-board{
+    padding: 15px 22px 0;
+    width: 375px;
+    height: 720px;
+    background: transparent;
+    border:rgb(155, 155, 0) 15px;
+    border-style:solid;
+}
+
+.upper-outer-box{
+    width: 400px;
+    height: 740px;
+    border:rgb(228, 189, 13) 10px;
+    border-style:solid;
+}
+
+.upper-inner-box {
+    --s: 30px;  /* control the size of the spikes */
+    --w: 50px; /* preferred image width */
+
+    width: round(var(--w),var(--s)) 700px;
+    width: 375px;
+    height: 720px;
+    aspect-ratio: 1;
+    object-fit: none;
+    /* padding: calc(.75*var(--s)); */
+    background: rgb(235, 222, 197);
+    mask:
+        conic-gradient(#000 0 0) 50%/calc(100% - var(--s)) calc(100% - var(--s)) no-repeat,
+        repeating-conic-gradient(from 45deg,#0000 0,#000 1deg 89deg,#0000 25% 50%) 
+        calc(var(--s)/2) 0/var(--s) var(--s);
+}
+
+/* ------------------------------------------------------- */
+
+.drawing-board canvas{
+    width: 720px;
+    height: 615px;
+    background: transparent;
+    border:rgb(155, 155, 0) 15px;
+    border-style:solid;
+}
+
+.lower-outer-box{
+    width: 750px;
+    height: 635px;
+    border:rgb(228, 189, 13) 10px;
+    border-style:solid;
+}
+
+/* HTML: <div class="zig-zag-box"></div> */
+.lower-inner-box {
+    --s: 30px;  /* control the size of the spikes */
+    --w: 350px; /* preferred image width */
+
+    width: round(var(--w),var(--s)) 700px;
+    height: 615px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    /* padding: calc(.75*var(--s)); */
+    background: rgb(235, 222, 197);
+    mask:
+        conic-gradient(#000 0 0) 50%/calc(100% - var(--s)) calc(100% - var(--s)) no-repeat,
+        repeating-conic-gradient(from 45deg,#0000 0,#000 1deg 89deg,#0000 25% 50%) 
+        calc(var(--s)/2) 0/var(--s) var(--s);
+}
