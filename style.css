@@ -66,11 +66,11 @@ margin-bottom: 10px;
 }
 
 .option:is(:hover, .active) :where(span, label){
-color:chartreuse;
+color:rgb(255, 0, 149);
 }
 
 .option :where(span, label){
-    color: grey;
+    color: black;
     cursor: pointer;
     padding-left: 10px;
 }
@@ -82,7 +82,7 @@ color:chartreuse;
 }
 
 #fill-color:checked ~ label{
-    color: aqua;
+    color: rgb(244, 247, 247);
 }
 
 .option #size-slider{
@@ -113,35 +113,35 @@ color:chartreuse;
 }
 
 .colors .option:nth-child(1){
-background: #fff;
+background-color: #fff;
 border: 1px solid #bfbfbf;
 }
 .colors .option:nth-child(2){
-background: #000;
+background-color: #000;
 }
 .colors .option:nth-child(3){
-background: red;
+background-color: red;
 }
 .colors .option:nth-child(4){
-background: orange;
+background-color: orange;
 }
 .colors .option:nth-child(5){
-background: yellow;
+background-color: yellow;
 }
 .colors .option:nth-child(6){
-background: green;
+background-color: green;
 }
 .colors .option:nth-child(7){
-background: blue;
+background-color: blue;
 }
 .colors .option:nth-child(8){
-background: purple;
+background-color: purple;
 }
 .colors .option:nth-child(9){
-background: pink;
+background-color: pink;
 }
 .colors .option:nth-child(10){
-background: none;
+background-color: none;
 border: 1px solid #bfbfbf;
 }
 
@@ -242,7 +242,7 @@ border-color: #ccc;
     aspect-ratio: 1;
     object-fit: none;
     /* padding: calc(.75*var(--s)); */
-    background: rgb(28, 180, 79);
+    background: rgb(235, 222, 197);
     mask:
         conic-gradient(#000 0 0) 50%/calc(100% - var(--s)) calc(100% - var(--s)) no-repeat,
         repeating-conic-gradient(from 45deg,#0000 0,#000 1deg 89deg,#0000 25% 50%) 
