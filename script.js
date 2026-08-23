@@ -187,11 +187,11 @@ colorBtns.forEach(btn => {
     });
 })
 
-colorPicker.addEventListener("change", () => {
-    // passing picked color value from color picker to last color btn background
-    colorPicker.parentElement.style.background = colorPicker.value;
-    colorPicker.parentElement.click();
-})
+// colorPicker.addEventListener("change", () => {
+//     // passing picked color value from color picker to last color btn background
+//     colorPicker.parentElement.style.background = colorPicker.value;
+//     colorPicker.parentElement.click();
+// })
 
 clearCanvas.addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // clearing the whole canvas
