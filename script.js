@@ -4,6 +4,8 @@ fillColor = document.querySelector("#fill-color"),
 sizeSlider = document.querySelector("#size-slider"),
 colorBtns = document.querySelectorAll(".colors .option"),
 colorPicker = document.querySelector("#color-picker"),
+clearCanvas = document.querySelector(".clear-canvas"),
+saveImg = document.querySelector(".save-img"),
 ctx = canvas.getContext("2d", {
       willReadFrequently: true,
  });
@@ -15,6 +17,13 @@ selectedTool = "brush",
 brushWidth = 5,
 selectedColor = "#black";
 
+const setCanvasBackground = () => {
+    // setting whole canvas background to white, so the downloaded img background will be white
+    ctx.fillStyle = "rgb(235, 222, 197)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = selectedColor; // setting fillstyle back to the selectedColor, it'll be the brush color
+}
+
 // -------------------------------------------------
 // play = document.getElementById("play");
 // -------------------------------------------------
@@ -23,6 +32,7 @@ window.addEventListener("load", () => {
     // setting canvas width/height.. offsetwidth/height returns viewable width/height of an element
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
+    setCanvasBackground();
 });
 
 // -------------------------------------------------
@@ -91,11 +101,16 @@ const startDraw = (e) => {
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
+// ** Update the eraser so that it ACTUALLY erases...
+
 const drawing = (e) => {
     if(!isDrawing) return; // if isDrawing is false return from here
     ctx.putImageData(snapshot, 0, 0); // adding copied canvas data on to this canvas
 
-    if(selectedTool === "brush") {
+    if(selectedTool === "brush" || selectedTool === "eraser") {
+        // if selected tool is eraser then set strokeStyle to white
+        // to paint white color on to the existing canvas content else set the stroke color to selected color
+        ctx.strokeStyle = selectedTool === "eraser" ? "rgb(235, 222, 197)" : selectedColor;
         ctx.lineTo(e.offsetX, e.offsetY); //creating line according to mouse pointer
         ctx.stroke(); //drawing/filling line with color
     } else if(selectedTool === "rectangle"){
@@ -131,6 +146,18 @@ colorPicker.addEventListener("change", () => {
     // passing picked color value from color picker to last color btn background
     colorPicker.parentElement.style.background = colorPicker.value;
     colorPicker.parentElement.click();
+})
+
+clearCanvas.addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // clearing the whole canvas
+    setCanvasBackground();
+})
+
+saveImg.addEventListener("click", () => {
+    const link = document.createElement("a"); // creating <a> element
+    link.download = `${Date.now()}.jpg`; // passing current date as link download value
+    link.href = canvas.toDataURL(); // passing canvasData as link href value
+    link.click(); // clicking link to download image
 })
 
 canvas.addEventListener("mousedown", startDraw);
