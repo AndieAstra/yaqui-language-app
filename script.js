@@ -11,7 +11,9 @@ isDrawing = false,
 selectedTool = "brush",
 brushWidth = 5;
 
-play = document.getElementById("play");
+// -------------------------------------------------
+// play = document.getElementById("play");
+// -------------------------------------------------
 
 window.addEventListener("load", () => {
     // setting canvas width/height.. offsetwidth/height returns viewable width/height of an element
@@ -19,11 +21,26 @@ window.addEventListener("load", () => {
     canvas.height = canvas.offsetHeight;
 });
 
-function playMusic(){
-    let audio = new Audio("media/audio.m4a");
-    audio.play()
+// -------------------------------------------------
+// function playMusic(){
+//     let audio = new Audio("media/audio.m4a");
+//     audio.play()
+// }
+
+// play.addEventListener("click", playMusic);
+
+function clickRectangle() {
+    var sound = document.getElementById('audio');
+    sound.play();
 }
-play.addEventListener("click", playMusic);
+
+function clickBlack() {
+    var sound = document.getElementById('audio2');
+    sound.play();
+}
+
+
+// -------------------------------------------------
 
 const drawRect = (e) => {
     // if fillColor isn't checked draw a rect with border else draw rect w/ background
