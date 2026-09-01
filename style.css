@@ -16,6 +16,34 @@ body {
     overflow: hidden;
 }
 
+/* ------------------------------------------------------------------- */
+/*                       Voice Control                                  */
+/* ------------------------------------------------------------------- */
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: white;
+            width: 100%;
+            max-width: 500px;
+            min-height: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+/* ------------------------------------------------------------------- */
+
 button {
     background-color: transparent;
     border-width: 0;

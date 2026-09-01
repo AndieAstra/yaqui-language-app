@@ -1,3 +1,51 @@
+// Check for browser compatibility
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (SpeechRecognition) {
+    console.log('Your browser supports speech recognition.');
+
+    // Create a new instance of SpeechRecognition
+    const recognition = new SpeechRecognition();
+
+    // Set recognition properties
+    recognition.continuous = true; // Keep listening until manually stopped
+    recognition.interimResults = false; // Don't show interim results
+    recognition.lang = 'en-US'; // Set language
+
+    // Start recognition when the button is clicked
+    const startBtn = document.getElementById('startBtn');
+    const output = document.getElementById('output');
+
+    startBtn.addEventListener('click', () => {
+        recognition.start();
+        console.log('Voice recognition started. Speak into the microphone.');
+    });
+
+// ----------------------------------------------------------------
+
+    // Handle the result event
+    recognition.addEventListener('result', (event) => {
+        const transcript = event.results[event.resultIndex][0].transcript;
+        output.textContent = transcript; // Display the recognized speech
+        console.log('Recognized Text:', transcript);
+
+        // Perform actions based on voice commands (optional)
+        if (transcript.toLowerCase().includes('hello')) {
+            output.textContent += ' - You said hello!';
+        }
+    });
+
+    // Handle errors
+    recognition.addEventListener('error', (event) => {
+        console.error('Speech recognition error:', event.error);
+    });
+
+} else {
+    console.log('Speech recognition is not supported in this browser.');
+}
+
+// ----------------------------------------------------------------
+
 const canvas = document.querySelector("canvas"),
 toolBtns = document.querySelectorAll(".tool"),
 fillColor = document.querySelector("#fill-color"),
