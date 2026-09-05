@@ -41,6 +41,7 @@ body {
         button:hover {
             background-color: #0056b3;
         }
+        
 
 /* ------------------------------------------------------------------- */
 
@@ -53,6 +54,13 @@ button {
     font-weight: inherit;
     line-height: inherit;
     padding: 0; 
+}
+
+.mic_button {
+    background: url(icons/icon_mic.svg) no-repeat;
+    padding: 20px 20px;
+    margin: 5px 50px 10px;
+    color: transparent;
 }
 
 .container{
@@ -166,6 +174,10 @@ color:rgb(255, 0, 149);
     color: black;
 }
 
+.colors .red {
+background-color: red;
+}
+
 .colors .option:nth-child(1){
 background-color: #fff;
 border: 1px solid #bfbfbf;
@@ -173,9 +185,11 @@ border: 1px solid #bfbfbf;
 .colors .option:nth-child(2){
 background-color: #000;
 }
+
 .colors .option:nth-child(3){
-background-color: red;
+background-color: rgb(99, 2, 2);
 }
+
 .colors .option:nth-child(4){
 background-color: orange;
 }

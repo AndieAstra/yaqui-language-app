@@ -1,5 +1,6 @@
-REFERENCES
-// -------------------------------
+// -------// -------
+    REFERENCES
+// -------// -------
 
 link to youtube tutorial: https://www.youtube.com/watch?v=y84tBZo8GFo
 
@@ -41,3 +42,14 @@ https://maketecheasier.com/change-mouse-pointer-css/
 
 Free icons:
 https://publicdomainvectors.org/tag/paintbrush?lang=en
+
+// ---------------------------------
+
+***Might be able to contribute to the site!***
+
+https://www.culturayaqui.com/yeewim
+
+// ---------------------------------
+Speech color changer!
+
+https://codepen.io/patrickliu/pen/ErNWPM

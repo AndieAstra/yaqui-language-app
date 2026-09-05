@@ -5,12 +5,13 @@ if (SpeechRecognition) {
     console.log('Your browser supports speech recognition.');
 
     // Create a new instance of SpeechRecognition
-    const recognition = new SpeechRecognition();
+    window.recognition = new SpeechRecognition();
 
     // Set recognition properties
     recognition.continuous = true; // Keep listening until manually stopped
     recognition.interimResults = false; // Don't show interim results
     recognition.lang = 'en-US'; // Set language
+    //recognition.lang = 'pt-BR';
 
     // Start recognition when the button is clicked
     const startBtn = document.getElementById('startBtn');
@@ -25,14 +26,15 @@ if (SpeechRecognition) {
 
     // Handle the result event
     recognition.addEventListener('result', (event) => {
-        const transcript = event.results[event.resultIndex][0].transcript;
+        var transcript = event.results[event.resultIndex][0].transcript;
+        console.log("Recognition event: ", event);
         output.textContent = transcript; // Display the recognized speech
-        console.log('Recognized Text:', transcript);
+        console.log('Recognized Text:', transcript, "@", event.results[event.resultIndex][0].confidence);
 
         // Perform actions based on voice commands (optional)
-        if (transcript.toLowerCase().includes('hello')) {
-            output.textContent += ' - You said hello!';
-        }
+        // if (transcript.toLowerCase().includes('hello')) {
+        //     output.textContent += ' - You said hello!';
+        // }
     });
 
     // Handle errors
@@ -40,15 +42,125 @@ if (SpeechRecognition) {
         console.error('Speech recognition error:', event.error);
     });
 
+    // CHange color HERE <-----------------------------------------
+    recognition.onresult = function(event) {
+        console.log("onresult event is ", event);
+        var transcript = event.results[event.resultIndex][0].transcript.toLowerCase();
+        var keyPhrase = "set color";
+
+        // test the transcript for a key phrase
+        if( transcript.indexOf(keyPhrase) !== -1 ) {
+            // find the next word after the key phrase
+            var parts = transcript.split(keyPhrase);// take text after phrase
+            console.log(parts);
+            var colorSpoken = parts[1].trim().split(" ")[0];// split off any text after the very next word
+            console.log("heard color spoken as ", colorSpoken);
+
+            changeColor(colorSpoken);
+        }
+        
+
+        recognition.onspeechend = function () {
+            recognition.stop();
+        };
+
+        recognition.onnomatch = function (event) {
+            diagnostic.textContent = "Sorry, I didn't recognise that speech.";
+        };
+
+        recognition.onerror = function (event) {
+            diagnostic.textContent = "Error occurred in recognition: " + event.error;
+        };
+    };
+
 } else {
     console.log('Speech recognition is not supported in this browser.');
+}
+
+function changeColor(transcript) {
+    words = transcript.split(" ");
+
+    const enabledColors = {
+        red : { 
+            selectColor: function() {
+                clickRed();
+                redColor.click();
+            }
+        },
+        black: { 
+            selectColor: function() {
+                clickBlack();
+                blackColor.click();
+            }
+        },
+        orange: { 
+            selectColor: function() {
+                clickOrange();
+                orangeColor.click();
+            }
+        },
+        pink: { 
+            selectColor: function() {
+                clickPink();
+                pinkColor.click();
+            }
+        },
+        blue: { 
+            selectColor: function() {
+                clickBlue();
+                blueColor.click();
+            }
+        }, 
+        green: { 
+            selectColor: function() {
+                clickGreen();
+                redColor.click();
+            }
+        },
+        yellow: { 
+            selectColor: function() {
+                clickYelow();
+                yellowColor.click();
+            }
+        },
+        purple: { 
+            selectColor: function() {
+                clickPurple();
+                purpleColor.click();
+            }
+        }
+    };
+
+    for( i in words ) {
+        for( j in enabledColors ) {
+            word = words[i].toLowerCase();
+            enabledColor = j;
+            
+            if( word === enabledColor ) {
+                console.log("found a match!! ", word, "===", enabledColor);
+                // try and see if this will execute the callback
+                console.log("execute color change callback here ...", enabledColors, word);
+                enabledColors[enabledColor].selectColor();
+            }
+        }
+    }
+
+    // if (colors[color]) {
+    //     // Assuming you have a paintbrush object
+    //     changeColor.color = colors[color];
+    //     console.log(`Paintbrush color changed to ${color}`);
+    // } else {
+    //     console.log("Color not recognized. Please try again.");
+    // }
 }
 
 // ----------------------------------------------------------------
 
 const canvas = document.querySelector("canvas"),
 toolBtns = document.querySelectorAll(".tool"),
+// 
 fillColor = document.querySelector("#fill-color"),
+// 
 sizeSlider = document.querySelector("#size-slider"),
 colorBtns = document.querySelectorAll(".colors .option"),
 colorPicker = document.querySelector("#color-picker"),
@@ -120,6 +232,7 @@ function clickBlack() {
     sound.play();
 }
 function clickRed() {
+    console.log("calling clickRed function...");
     var sound = document.getElementById('red');
     sound.play();
 }

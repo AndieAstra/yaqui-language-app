@@ -12,12 +12,14 @@
 <div class="container">
 
     <div class="voice">
-        <h1>Voice-Controlled Web App</h1>
-    <p>Click the button and speak. Your voice will be recognized and displayed as text!</p>
 
-    <button id="startBtn">Start Voice Recognition</button>
+    <!-- <button id="startBtn"><i class="mic_button">mic</i></button> -->
 
-    <div id="output">Recognized text will appear here...</div>
+    <button id="startBtn" onclick="recognition.start()"><i class="mic_button">mic</i></button>
+
+    <br><br>
+
+    <div id="output">Hitasa?</div>
 
     </div>
 
@@ -41,12 +43,12 @@
 
                     <li class="option tool" id="circle">
                         <img src="icons/circle.svg" alt="circle">
-                        <audio id="circle" audiostart="false" src="media/circle.m4a"></audio>
+                        <audio id="circ" audiostart="false" src="media/circle.m4a"></audio>
                         <button onclick="clickCircle();"><span>Koelai</span></button>
                     </li>
                     <li class="option tool" id="triangle">
                         <img src="icons/triangle.svg" alt="triangle">
-                        <audio id="triangle" audiostart="false" src="media/triangle.m4a"></audio>
+                        <audio id="tri" audiostart="false" src="media/triangle.m4a"></audio>
                         <button onclick="clickTriangle();"><span>Vahi chakariakame</span></button>
                     </li>
                     <li class="option">
@@ -55,6 +57,10 @@
                     </li>
                 </ul>
             </div>
+
+
+            
+
 
             <div class="row">
                 <div class="title">
@@ -76,52 +82,59 @@
                 </ul>
             </div>
 <br>
+
+
+
+
+
             <div class="row colors">
                 <div class="title">
                     <audio id="colors" audiostart="false" src="media/colors.m4a"></audio>
                     <button onclick="clickColors();"><span>Hiyokim</span></button>
                 </div>
                 <ul class="options">
-                    <li class="option">
+                    <li id="whiteColor" class="option">
                         <audio id="white" audiostart="false" src="media/white.m4a"></audio>
                         <button onclick="clickWhite();"><span class="text">Tosai</span></button>
                     </li>
-                    <li class="option selected">
+                    <li id="blackColor" class="option selected">
                         <audio id="black" audiostart="false" src="media/black.m4a"></audio>
                         <button onclick="clickBlack();"><span class="text">Chukui</span></button>
                     </li>
-                    <li class="option">
+
+                    <li id="redColor" class="option">
                         <audio id="red" audiostart="false" src="media/red.m4a"></audio>
                         <button onclick="clickRed();"><span class="text">Siki</span></button>
                     </li>
-                    <li class="option">
+
+                    <li id="orangeColor" class="option">
                         <audio id="orange" audiostart="false" src="media/orange.m4a"></audio>
                         <button onclick="clickOrange();"><span class="text">Sawa_Hewei</span></button>
                     </li>
-                    <li class="option">
+                    <li id="yellowColor" class="option">
                         <audio id="yellow" audiostart="false" src="media/yellow.m4a"></audio>
                         <button onclick="clickYellow();"><span class="text">Sawai</span></button>
                     </li>
-                    <li class="option">
+                    <li id="greenColor" class="option">
                         <audio id="green" audiostart="false" src="media/green.m4a"></audio>
                         <button onclick="clickGreen();"><span class="text">Siari</span></button>
                     </li>
-                    <li class="option">
+                    <li id="blueColor"  class="option">
                         <audio id="blue" audiostart="false" src="media/blue.m4a"></audio>
                         <button onclick="clickBlue();"><span class="text">Tewei</span></button>
                     </li>
-                    <li class="option">
+                    <li id="purpleColor" class="option">
                         <audio id="purple" audiostart="false" src="media/purple.m4a"></audio>
                         <button onclick="clickPurple();"><span class="text">Kut_tewei</span></button>
                     </li>
-                    <li class="option">
+                    <li id="pinkColor" class="option">
                         <audio id="pink" audiostart="false" src="media/pink.m4a"></audio>
                         <button onclick="clickPink();"><span class="text">Sikheewi</span></button>
                     </li>
 
         <!-- This does work. Omitting for language purposes -->
                     <!-- <li class="option">
-                        <input type="color" id="color-picker" value="#4A98F7">
+                        <input type="color" id="colorPicker" value="#4A98F7">
                     </li> -->
                 </ul>
             </div>
