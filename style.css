@@ -73,9 +73,33 @@ button {
 
 .mic_button {
     background: url(icons/icon_mic.svg) no-repeat;
-    padding: 20px 20px;
-    margin: 5px 50px 10px;
     color: transparent;
+    display: block;
+    height: 100px;
+    width: 57px;
+    color: transparent;
+    padding: 10px;
+    margin: 22px;
+}
+
+#stopBtn {
+    position: absolute;
+    transition-duration: 1s;
+    top: 50px;
+    margin-left: 23px;
+    font-size: 50px;
+    font-family: fantasy;
+    opacity: 0.5;
+}
+#stopBtn.listening {
+    margin-left: 20px;
+    margin-top: -24px;
+    height: 122px;
+    width: 62px;
+    background-color: red;
+}
+#stopBtn.listening.high {
+    opacity: 0.8;
 }
 
 .container{

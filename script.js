@@ -8,7 +8,7 @@ if (SpeechRecognition) {
     window.recognition = new SpeechRecognition();
 
     // Set recognition properties
-    recognition.continuous = true; // Keep listening until manually stopped
+    recognition.continuous = false;// true; // Keep listening until manually stopped
     recognition.interimResults = false; // Don't show interim results
     recognition.lang = 'en-US'; // Set language
     //recognition.lang = 'pt-BR';
@@ -19,7 +19,72 @@ if (SpeechRecognition) {
 
     startBtn.addEventListener('click', () => {
         recognition.start();
-        console.log('Voice recognition started. Speak into the microphone.');
+        console.log('Voice recognition started for 10 seconds.... Speak into the microphone.');
+
+
+        setTimeout(function() { 
+            document.getElementById("stopBtn").innerText = "3!";
+            document.getElementById("stopBtn").style['margin-left'] = '30px';
+            document.getElementById("stopBtn").style['opacity'] = '0.4';
+            
+            setTimeout(function() {
+                document.getElementById("stopBtn").innerText = "2!";
+                document.getElementById("stopBtn").style['margin-left'] = '30px';
+                document.getElementById("stopBtn").style['opacity'] = '0.3';
+
+                setTimeout(function() {
+                    document.getElementById("stopBtn").innerText = "1";
+                    document.getElementById("stopBtn").style['margin-left'] = '30px';
+                    document.getElementById("stopBtn").style['opacity'] = '0.2';
+                    
+                    
+                    setTimeout(function() {
+                        document.getElementById("stopBtn").innerText = "";
+                        document.getElementById("stopBtn").style['margin-left'] = '30px';
+                        document.getElementById("stopBtn").style['opacity'] = null;
+                    },1000);
+
+                },1000);
+            }, 1000);
+
+        }, 7000);// reminder blink at 3 seconds remaining
+
+        window.listeningPulseIndex = setInterval(function() {
+            present = document.getElementById("stopBtn").classList.value.indexOf('high') > -1;
+            if( present ) {
+                document.getElementById("stopBtn").classList.value = 'listening';
+            }
+            else {
+                document.getElementById("stopBtn").classList.value = 'listening high';
+            }
+        }, 500);
+
+        document.getElementById("stopBtn").innerText = "10!";
+        setTimeout(function() {
+            document.getElementById("stopBtn").innerText = "9!";
+            document.getElementById("stopBtn").style['padding-left'] = '30px';
+            document.getElementById("stopBtn").style['opacity'] = '0.4';
+            
+            setTimeout(function() {
+                document.getElementById("stopBtn").innerText = "8!";
+                document.getElementById("stopBtn").style['padding-left'] = '30px';
+                document.getElementById("stopBtn").style['opacity'] = '0.3';
+
+                setTimeout(function() {
+                    document.getElementById("stopBtn").innerText = "";
+                    document.getElementById("stopBtn").style['padding-left'] = '30px';
+                    document.getElementById("stopBtn").style['opacity'] = null;
+                },1000);// show 10 seconds remaining overlay over mic button then clear out after 1 second
+                
+            },1000);// show 10 seconds remaining overlay over mic button then clear out after 1 second
+            
+        },1000);// show 10 seconds remaining overlay over mic button then clear out after 1 second
+        setTimeout(function() {
+            recognition.stop();
+            console.log("stopping voice recognition by 10 second timeout...");
+            document.getElementById("stopBtn").classList.value = '';
+            clearInterval(window.listeningPulseIndex);
+        }, 10000);// turn off voice recognition at specified timeout
     });
 
 // ----------------------------------------------------------------
@@ -205,6 +270,15 @@ window.addEventListener("load", () => {
 
 function clickShapes() {
     var sound = document.getElementById('shapes');
+    sound.play();
+}
+
+function clickColors() {
+    var sound = document.getElementById('colors');
+    sound.play();
+}4
+function clickOptions() {
+    var sound = document.getElementById('options');
     sound.play();
 }
 
