@@ -96,3 +96,25 @@ recognition.onnomatch = function (event) {
 recognition.onerror = function (event) {
   diagnostic.textContent = "Error occurred in recognition: " + event.error;
 };
+
+==============================================================
+Research Links
+==============================================================
+
+https://codepen.io/patrickliu/pen/ErNWPM?editors=0010
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang
+
+https://webaudio.github.io/web-speech-api/#introduction
+
+https://duckduckgo.com/?q=how+to+use+custom+speech+grammar+list+web+speech+api&ia=web
+
+https://stackoverflow.com/questions/53222408/using-grammar-with-web-speech-api
+
+https://duckduckgo.com/?q=javascript+web+speech+api+custom+translation&ia=web
+
+https://css-tricks.com/using-the-web-speech-api-for-multilingual-translations/
+
+https://medium.com/@inboxamarbalu/building-a-voice-translation-app-with-google-translate-api-web-speech-api-and-transliteration-in-701e65d58747
+
+https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition

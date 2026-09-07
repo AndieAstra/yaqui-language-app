@@ -287,13 +287,18 @@ function clickRectangle() {
     sound.play();
 }
 
+function clickSquare() {
+    var sound = document.getElementById('squa');
+    sound.play();
+}
+
 function clickCircle() {
-    var sound = document.getElementById('circle');
+    var sound = document.getElementById('circ');
     sound.play();
 }
 
 function clickTriangle() {
-    var sound = document.getElementById('triangle');
+    var sound = document.getElementById('tri');
     sound.play();
 }
 

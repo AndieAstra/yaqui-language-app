@@ -2,25 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>A-aniame | Hiaki Coloring App</title>
+    <title>Kolorim | Hiaki Coloring App</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-<div class="container">
+<div class="container hidden">
 
     <div class="voice">
-
-    <button id="stopBtn" onclick="stopListeningToMe();"></button>
-
-    <button id="startBtn"><i class="mic_button">mic</i></button>
-
-    <br><br>
-
-    <div id="output">Hitasa?</div>
-
+        <button id="stopBtn" onclick="stopListeningToMe();"></button>
+        <button id="startBtn">
+            <!-- <i class="mic_button">mic</i> -->
+        </button>
+        <br><br>
+        <div id="output" style="background-color: transparent; border: transparent;"></div>
     </div>
 
 <div class="upper-outer-box">
@@ -36,9 +33,16 @@
 
                     <li class="option tool" id="rectangle">
     <!-- I renamed "rect" b/c it didn't like the full word :( -->
-                        <img src="icons/rectangle.svg" alt="Rectangle">
+                        <img style="height: 30px; width: 30px;" src="icons/rectangle.svg" alt="Rectangle">
                         <audio id="rect" audiostart="false" src="media/rectangle.m4a"></audio>
                         <button onclick="clickRectangle();"><span>Woi katana teeve</span></button>
+                    </li>
+
+                    <li class="option tool" id="rectangle">
+    <!-- I renamed "rect" b/c it didn't like the full word :( -->
+                        <img src="icons/square.svg" alt="Square">
+                        <audio id="squa" audiostart="false" src="media/square.m4a"></audio>
+                        <button onclick="clickSquare();"><span>Naiki chakariakame</span></button>
                     </li>
 
                     <li class="option tool" id="circle">
@@ -63,10 +67,10 @@
 
 
             <div class="row">
-                <div class="title">
+                <!-- <div class="title">
                     <audio id="options" audiostart="false" src="media/options.m4a"></audio>
                     <button onclick="clickOptions();"><span>Options</span></button>
-                </div>
+                </div> -->
                 <ul class="options">
                     <li class="option active tool" id="brush">
                         <img src="icons/brush.svg" alt="brush">
@@ -81,15 +85,12 @@
                     </li>
                 </ul>
             </div>
-<br>
-
-
 
 
 
             <div class="row colors">
                 <div class="title">
-                    <audio id="colors" audiostart="false" src="media/colors.m4a"></audio>
+                    <audio id="colors" audiostart="false" src=""></audio>
                     <button onclick="clickColors();"><span>Hiyokim</span></button>
                 </div>
                 <ul class="options">

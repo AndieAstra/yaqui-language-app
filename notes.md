@@ -24,7 +24,7 @@ Adding multiple audio files to text: https://www.youtube.com/watch?v=6ukTdMSlerI
 
 Speech recognition:
 
-https://blog.bytescrum.com/how-to-create-a-voice-controlled-web-app-using-javascript-and-web-speech-api
+<!-- https://blog.bytescrum.com/how-to-create-a-voice-controlled-web-app-using-javascript-and-web-speech-api
 
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
 
@@ -32,7 +32,13 @@ Example:
 
 https://github.com/alittlemoreenglish/pronunciation/blob/main/script.js
 
-https://alittlemoreenglish.github.io/pronunciation/ 
+https://alittlemoreenglish.github.io/pronunciation/  -->
+
+
+** Let's use this one below instead!**
+
+https://www.youtube.com/watch?v=qlxv1CBatiw
+
 
 // ---------------------------------
 
