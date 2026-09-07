@@ -16,6 +16,50 @@ body {
     overflow: hidden;
 }
 
+/* ------------------------------------------------------------------- */
+/*                       Voice Control                                  */
+/* ------------------------------------------------------------------- */
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: white;
+            width: 100%;
+            max-width: 500px;
+            min-height: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.2); 
+            
+        }
+        li.option button {
+            padding: 2px 10px 2px 0px;
+            margin-left: -10px;
+        }
+        li.option.tool button {
+            margin-left: 0px;
+        }
+        li.option.selected button {
+            border: 3px dotted gold;
+            transition: 0.2s ease-in;
+            background: rgba(255,255,255,0.2);
+        }
+        
+
+/* ------------------------------------------------------------------- */
+
 button {
     background-color: transparent;
     border-width: 0;
@@ -25,6 +69,37 @@ button {
     font-weight: inherit;
     line-height: inherit;
     padding: 0; 
+}
+
+.mic_button {
+    background: url(icons/icon_mic.svg) no-repeat;
+    color: transparent;
+    display: block;
+    height: 100px;
+    width: 57px;
+    color: transparent;
+    padding: 10px;
+    margin: 22px;
+}
+
+#stopBtn {
+    position: absolute;
+    transition-duration: 1s;
+    top: 50px;
+    margin-left: 23px;
+    font-size: 50px;
+    font-family: fantasy;
+    opacity: 0.5;
+}
+#stopBtn.listening {
+    margin-left: 20px;
+    margin-top: -24px;
+    height: 122px;
+    width: 62px;
+    background-color: red;
+}
+#stopBtn.listening.high {
+    opacity: 0.8;
 }
 
 .container{
@@ -90,13 +165,14 @@ color:rgb(255, 0, 149);
 
 .title:is(:hover, .active) :where(span, label){
     color:rgb(39, 39, 39);
-    font-size:larger;
+    
 }
 
 .title :where(span, label){
     color: black;
     cursor: pointer;
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 .title {
@@ -138,6 +214,10 @@ color:rgb(255, 0, 149);
     color: black;
 }
 
+.colors .red {
+background-color: red;
+}
+
 .colors .option:nth-child(1){
 background-color: #fff;
 border: 1px solid #bfbfbf;
@@ -145,9 +225,11 @@ border: 1px solid #bfbfbf;
 .colors .option:nth-child(2){
 background-color: #000;
 }
+
 .colors .option:nth-child(3){
-background-color: red;
+background-color: rgb(99, 2, 2);
 }
+
 .colors .option:nth-child(4){
 background-color: orange;
 }
